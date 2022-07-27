@@ -1,10 +1,13 @@
 import React from "react";
-import classes from "./SearchInput.module.css";
+import "./SearchInput.css";
+import searchImg from "../../images/graphics/search.svg";
 
 const SearchInput = (props) => {
   return (
-    <div>
-      <input {...props} />
+    <div className="search-container">
+      <div className="search-img"></div>
+      {/* <img src={searchImg} className="search-img" /> */}
+      <input {...props} className="search-input" />
     </div>
   );
 };

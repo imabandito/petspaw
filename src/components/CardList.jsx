@@ -3,9 +3,7 @@ import Card from "./Card";
 import "../styles/CardList.css";
 import { useState } from "react";
 
-const CardList = ({ cardParams = {} }) => {
-  const [active, setActive] = useState(0);
-
+const CardList = ({ cardParams = {}, active, setActive }) => {
   return (
     <div className="card-list">
       {cardParams.map((param) => (
@@ -13,7 +11,7 @@ const CardList = ({ cardParams = {} }) => {
           {...param}
           key={param.id}
           onClick={() => setActive(param.id)}
-          active={param.id === active ? active : false}
+          active={param.path === active ? active : false}
         ></Card>
       ))}
     </div>

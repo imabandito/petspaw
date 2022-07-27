@@ -13,6 +13,7 @@ function App() {
       <div className="app-container">
         <div className="container">
           <Navigation />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/voting" element={<Voting />} />

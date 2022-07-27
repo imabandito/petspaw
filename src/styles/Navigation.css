@@ -1,6 +1,8 @@
 .nav-container {
-  min-width: 665px;
-  padding: 30px 72px 0px 121px;
+  /* min-width: 665px; */
+  min-width: 47%;
+  /* padding: 30px 72px 0px 121px; */
+  padding: 2rem 5rem 0rem 6rem;
 }
 
 .nav-info {
@@ -28,4 +30,15 @@
 
 .nav-pick h4 {
   margin: 60px 0px 0px 0px;
+}
+
+@media screen and (max-width: 1100px) {
+  .nav-container {
+  }
+  .nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
