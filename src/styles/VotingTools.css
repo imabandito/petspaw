@@ -1,0 +1,45 @@
+.voting-tools-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: -40px;
+  right: 50%;
+  transform: translateX(50%);
+  background: #fff;
+  border-radius: 20px;
+  padding: 4px;
+  z-index: 10;
+}
+
+.voting-btn {
+  height: 80px;
+  width: 80px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voting-tools-container .voting-btn:nth-child(2) {
+  margin: 0px 4px;
+}
+
+.voting-tools-container .voting-btn:first-child {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.voting-tools-container .voting-btn:last-child {
+  border-radius: 0px 20px 20px 0px;
+}
+
+.btn-like {
+  background: #97eab9;
+}
+
+.btn-dislike {
+  background: #ffd280;
+}
+
+.btn-favourite {
+  background: #ff868e;
+}

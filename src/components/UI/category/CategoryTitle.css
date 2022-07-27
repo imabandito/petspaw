@@ -1,0 +1,17 @@
+.category-title-container {
+  width: 146px;
+  height: 60px;
+  background: #ff868e;
+  border-radius: 10px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+}

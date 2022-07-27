@@ -7,3 +7,24 @@
   justify-content: center;
   align-items: center;
 }
+
+.navbar-icon:hover,
+.hovered {
+  background-color: #fbe0dc;
+}
+
+.icon-active {
+  display: none;
+}
+
+.navbar-icon.active {
+  background-color: #ff868e;
+}
+
+.navbar-icon.active .icon-active {
+  display: block;
+}
+
+.navbar-icon.active .icon {
+  display: none;
+}
