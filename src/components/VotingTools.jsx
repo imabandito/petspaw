@@ -5,9 +5,9 @@ import likeIconActive from "../images/graphics/like-white-30.svg";
 import dislikeIconActive from "../images/graphics/dislike-white-30.svg";
 import favIconActive from "../images/graphics/fav-white-30.svg";
 
-const VotingTools = () => {
+const VotingTools = ({ handler }) => {
   return (
-    <div className="voting-tools-container">
+    <div className="voting-tools-container" onClick={handler}>
       <button className="btn-like voting-btn">
         <img src={likeIconActive} alt="like" />
       </button>

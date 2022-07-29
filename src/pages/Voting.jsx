@@ -11,18 +11,42 @@ import backIcon from "../images/graphics/back-20.svg";
 import backIconActive from "../images/graphics/back-white-20.svg";
 import CategoryTitle from "../components/UI/category/CategoryTitle";
 import VotingTools from "../components/VotingTools";
+import UserLogs from "../components/UserLogs";
 
 const Voting = () => {
   const [cat, setCat] = useState([{}]);
   const [fetchCat, isLoading, catError] = useFetching(async () => {
     const res = await CatService.getRandom();
-    console.log(res);
     setCat(res.data);
   });
+  const [reactions, setReactions] = useState([]);
 
   useEffect(() => {
     fetchCat();
-  }, []);
+  }, [reactions]);
+
+  const addReaction = (e) => {
+    const today = new Date();
+    const time = today.getHours() + ":" + today.getMinutes();
+    const classes = e.target.classList;
+
+    if (classes.contains("btn-like")) {
+      setReactions([
+        { id: cat[0].id, type: "Likes", time: time },
+        ...reactions,
+      ]);
+    } else if (classes.contains("btn-dislike")) {
+      setReactions([
+        { id: cat[0].id, type: "Dislikes", time: time },
+        ...reactions,
+      ]);
+    } else if (classes.contains("btn-favourite")) {
+      setReactions([
+        { id: cat[0].id, type: "Favourites", time: time },
+        ...reactions,
+      ]);
+    }
+  };
 
   return (
     <div className="voting-container">
@@ -37,7 +61,6 @@ const Voting = () => {
       </div>
       {catError && <h1>Error {catError}</h1>}
       <div className="voting-image">
-        {console.log(cat)}
         {isLoading ? (
           <div>Loading...</div>
         ) : (
@@ -45,9 +68,10 @@ const Voting = () => {
             <div className="voting-image-container">
               <img src={cat[0].url} alt="" />
             </div>
-            <VotingTools />
+            <VotingTools handler={addReaction} />
           </div>
         )}
+        <UserLogs reactions={reactions} />
       </div>
     </div>
   );

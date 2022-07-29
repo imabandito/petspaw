@@ -41,19 +41,27 @@ const Navigation = () => {
 
   return (
     <div className="nav-container">
-      <header>
-        <Link to="/" onClick={() => setActive("/")}>
-          <img src={logo} alt="logo" />
-        </Link>
-      </header>
-      <div className="nav-content">
-        <div className="nav-info">
-          <h1>Hello there!</h1>
-          <h5>Meowww and enjoy</h5>
-        </div>
-        <div className="nav-pick">
-          <h4>Lets start using The Cat API</h4>
-          <CardList cardParams={cards} active={active} setActive={setActive} />
+      <div className="nav-subcontainer">
+        <div className="nav-all-content">
+          <header>
+            <Link to="/" onClick={() => setActive("/")}>
+              <img src={logo} alt="logo" />
+            </Link>
+          </header>
+          <div className="nav-content">
+            <div className="nav-info">
+              <h1>Hello there!</h1>
+              <h5>Meowww and enjoy</h5>
+            </div>
+            <div className="nav-pick">
+              <h4>Lets start using The Cat API</h4>
+              <CardList
+                cardParams={cards}
+                active={active}
+                setActive={setActive}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
